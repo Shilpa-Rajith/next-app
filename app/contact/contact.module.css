@@ -1,0 +1,5 @@
+.border:hover {
+  background-color: #f7f7ff;
+  transition: 0.3s;
+  cursor: pointer;
+}

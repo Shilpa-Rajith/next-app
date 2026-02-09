@@ -1,0 +1,35 @@
+/* Floating Product Image Animation */
+.floating-img {
+  animation: float 3s infinite ease-in-out;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Glow Add to Cart Button */
+.glowBtn {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  color: white !important;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.glowBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(255, 121, 121, 0.5);
+}
+
+/* Flash Buy Button (Amazon style) */
+.flashBtn {
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  border: none;
+  color: white !important;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.flashBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(255, 138, 0, 0.5);
+}

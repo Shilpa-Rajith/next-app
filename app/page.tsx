@@ -1,65 +1,186 @@
+// "use client";
 import Image from "next/image";
+import Link from "next/link";
+import banner1 from "../public/banner 1.png"
+import banner2 from "../public/banner 2.png"
+import banner3 from "../public/banner 3.png"
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+const products = [
+    {
+        id: 1,
+        name: "Smart Watch",
+        price: 1199,
+        img: "/smartwatch.webp"
+    },
+    {
+        id: 2,
+        name: "Headphones",
+        price: 999,
+        img: "/headphones.webp"
+    },
+    {
+        id: 3,
+        name: "Snekers",
+        price: 1999,
+        img: "/snekers.webp"
+    },
+    {
+        id: 4,
+        name: "Hand Bag",
+        price: 1499,
+        img: "/handbag.webp"
+    },
+];
+
+
+export default function Carousel() {
+    return (
+        <>
+            <div id="mainCarousel" className="carousel slide" data-bs-ride="carousel">
+
+                <div className="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" className="active"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                </div>
+
+                <div className="carousel-inner">
+
+                    <div className="carousel-item active" data-bs-interval="3000">
+                        <Image
+                            src={banner1}
+                            className="d-block w-100"
+                            alt="Slide 1"
+                            height={550}
+                            style={{ objectFit: "cover" }}
+                            priority
+                        />
+                    </div>
+
+                    <div className="carousel-item" data-bs-interval="3000">
+                        <Image
+                            src={banner2}
+                            className="d-block w-100"
+                            alt="Slide 2"
+                            height={550}
+                            style={{ objectFit: "cover" }}
+                        />
+                    </div>
+
+                    <div className="carousel-item" data-bs-interval="3000">
+                        <Image
+                            src={banner3}
+                            className="d-block w-100"
+                            alt="Slide 3"
+                            height={550}
+                            style={{ objectFit: "cover" }}
+                        />
+                    </div>
+
+                </div>
+
+                <button className="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon"></span>
+                </button>
+
+                <button className="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span className="carousel-control-next-icon"></span>
+                </button>
+            </div>
+            <br />
+            {/* CARDS */}
+            <div className="row row-cols-2 row-cols-md-4 g-4">
+                <div className="col">
+                    <div className="card ">
+                        <video
+                            className="w-100"
+                            src="/card 1.mp4"
+                            controls
+                            muted
+                            autoPlay
+                            loop
+                            playsInline
+                            style={{ objectFit: "cover", height: "350px" }}
+                        ></video>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="card ">
+                        <video
+                            className="w-100"
+                            src="/card 2.mp4"
+                            controls
+                            muted
+                            autoPlay
+                            loop
+                            playsInline
+                            style={{ objectFit: "cover", height: "350px" }}
+                        ></video>
+                    </div>
+                </div>
+
+                <div className="col">
+                    <div className="card ">
+                        <video
+                            className="w-100"
+                            src="/card 3.mp4"
+                            controls
+                            muted
+                            autoPlay
+                            loop
+                            playsInline
+                            style={{ objectFit: "cover", height: "350px" }}
+                        ></video>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="card ">
+                        <video
+                            className="w-100"
+                            src="/card 4.mp4"
+                            controls
+                            muted
+                            autoPlay
+                            loop
+                            playsInline
+                            style={{ objectFit: "cover", height: "350px" }}
+                        ></video>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+
+
+            <div className="container py-5">
+                <h2 className="text-center fw-bold mb-5 heading">✨ Trending Products ✨</h2>
+
+                <div className="row row-cols-2 row-cols-md-4 g-4">
+                    {products.map((item) => (
+                        <div className="col" key={item.id}>
+                            <div className="card product-card text-center" style={{ width: "280px" }}>
+                                <Image
+                                    src={item.img}
+                                    width={300}
+                                    height={250}
+                                    alt={item.name}
+                                    className="card-img-top product-img"
+                                />
+
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                    <p className="price">₹ {item.price}</p>
+
+                                    <Link href="/products" className="btn btn-warning">
+                                        Shop Now
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+        </>
+    );
 }

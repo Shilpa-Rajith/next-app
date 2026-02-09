@@ -1,26 +1,86 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.product-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  background: #fff;
+  box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.product-img {
+  border-bottom: 1px solid #eee;
+  transition: 0.4s ease;
+ object-fit: contain;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 18px;
+  color: #0aa36c;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.btn-buy {
+  width: 100%;
+  background: #0aa36c;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-buy:hover {
+  background: #06754a;
+}
+
+
+
+
+.heading {
+  font-size: 32px;
+  color: #444;
+  letter-spacing: 1px;
+}
+.hover-grow {
+  transition: 0.3s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+.hover-zoom {
+  transition: transform 0.4s ease;
+}
+.hover-zoom:hover {
+  transform: scale(1.1);
+}
+
+.badge {
+  letter-spacing: 1px;
+}
+
+/* Smooth fade-in animation */
+.container {
+  animation: fade 0.4s ease-in-out;
+}
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
