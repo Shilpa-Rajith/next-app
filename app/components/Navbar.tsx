@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import { useCart } from "@/app/context/CartContext";
+import { useCart } from "../context/CartContext";
 import cartIcon from "../../public/cart.png";
 
 export default function Navbar() {
