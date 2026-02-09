@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useCart } from "../../context/CartContext";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import ProductSkeleton from "@/app/components/ProductSkelton";
+import ProductSkelton from "../../components/ProductSkelton";
 import styles from "./page.module.css";
 import { FaShoppingCart, FaBolt } from "react-icons/fa";
 
@@ -26,7 +26,7 @@ export default function ProductDetail() {
     fetchProduct();
   }, [productId]);
 
-  if (!product) return <ProductSkeleton />;
+  if (!product) return <ProductSkelton />;
 
   return (
     <div className="container py-5">
