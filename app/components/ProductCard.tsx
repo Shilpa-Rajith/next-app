@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { useCart } from "@/app/context/CartContext";  // 👈 important
+import { useCart } from "../context/CartContext";  // 👈 important
 
 type Product = {
   id: number;
